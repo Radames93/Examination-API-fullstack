@@ -22,3 +22,29 @@ img {
   height: 100px;
   width: auto;
 }
+
+.button {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.container {
+  width: 25%;
+}
+
+label,
+input {
+  padding: 5px;
+  display: block;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: pink;
+}
+
+.section-footer {
+  width: 25%;
+}
