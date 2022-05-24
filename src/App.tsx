@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import Start from './components/Startsida'
-import Tavla from './components/Tavla'
-import Galleri from './components/Galleri'
+import Tavla from './components/Tavla/Tavla'
+import Galleri from './components/Galleri/Galleri'
 import {NavLink, Routes, Route} from 'react-router-dom'
 
 const App = () => (
@@ -11,7 +11,7 @@ const App = () => (
         <header>
 			<nav>
         <NavLink to="/tavla" className="navLinks"> Tavla </NavLink>
-        <img className="hamtaro" src="src/images/hamtaro.jpg" />
+        <img className="hamtaro" src="./backend/images/hamtaro.jpg"/>
         <NavLink to="/" className="navLinks"> Startsida </NavLink>
         <NavLink to="/galleri" className="navLinks"> Galleri </NavLink>
 			</nav>
