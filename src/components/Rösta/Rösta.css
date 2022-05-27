@@ -1,0 +1,29 @@
+body {
+  margin: 40px;
+}
+
+.hamster-grid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+.card {
+  text-align: center;
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  padding: 1em;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+img {
+  height: 100px;
+  width: auto;
+}
+
+h1 {
+  text-align: center;
+}
