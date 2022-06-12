@@ -2,9 +2,15 @@ import React,{useState, useEffect} from 'react'
 import {fixUrl} from '../../utils'
 import './Galleri.css'
 import { Hamster } from '../../models/Hamster'
+import { Data } from '../../models/Hamster'
 import axios from 'axios';
 
+interface Props {
+  hamster: Hamster;
+}
+
 const Galleri = () => {
+
 
     const [maybeData, setMaybeData] = useState<any[]>([]);
     const [selectElement, setSelectElement] = useState<{}>({})
@@ -40,16 +46,16 @@ const Galleri = () => {
 
 
 	// Saknas: validering! Kontrollera om värdena är korrekta
-	const hamster: Hamster = {
-		name: name,
-		age: Number(age),
+	const hamster: Data = {
+    name: name,
+    age: Number(age),
     favFood: favFood,
     loves: loves,
     imgName: imgName,
     wins: Number(wins),
     defeats: Number(defeats),
-    games:Number(games)
-	}
+    games: Number(games)
+  }
 
   const nameIsValid = hamster.name !== ''
 	const ageIsValid = hamster.age >= 0
@@ -65,7 +71,7 @@ const Galleri = () => {
   && gamesIsValid
 
   const handleAddHamster = () => {
-    const hamster: Hamster = {
+    const hamster: Data = {
       name: name,
       age: Number(age),
       favFood: favFood,
@@ -87,18 +93,6 @@ const Galleri = () => {
     refreshPage();
 }
 
-const handleRemoveHamster = () => {
-{maybeData.map((hamster) => (
-  axios.delete(fixUrl(`/hamsters/${hamster.id}`))
-  .then((hamster) => {
-    console.log(hamster)
-  })
-  .catch((error) => {
-    console.log(error)
-  })
-))
-}
-}
 
 const handleClick = (hamster: any) => {
   setSelectElement(
@@ -109,6 +103,16 @@ const CloseClick = (hamster: any) => {
   setSelectElement('')
 }
 
+  async function deleteAHamster(id: string) {
+    axios.delete(fixUrl(`/hamsters/${id}`))
+  .then((hamster) => {
+    console.log(hamster)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+  refreshPage();
+  }
 
   return (
     <>
@@ -128,10 +132,8 @@ const CloseClick = (hamster: any) => {
            <button onClick={CloseClick}>Close info</button>
            </>
          ) : ''}
-        <button className='button' onClick={()=> handleClick(hamster)}>Remove hamster</button>
-         {selectElement=== hamster ? (
-           <button onClick={handleRemoveHamster}>Are you sure to remove it?</button>
-         ) : ''}
+        <button onClick={() => deleteAHamster(hamster.id)}>
+            Remove Hamster </button>
       </section>
        ))}
      </main>

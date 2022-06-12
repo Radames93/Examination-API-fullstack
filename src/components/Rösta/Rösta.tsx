@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {fixUrl} from '../../utils'
 import axios from 'axios'
-import { Hamster } from '../../models/Hamster'
+import { Data } from '../../models/Hamster'
 import './Rösta.css'
 
 
@@ -73,7 +73,7 @@ const Rösta = () => {
     }
 
     // Interface hamster
-    const hamster: Hamster = {
+    const hamster: Data = {
       name: name,
       age: Number(age),
       favFood: favFood,
@@ -86,7 +86,7 @@ const Rösta = () => {
 
     // Function för att modifiera wins, defeats och games + PUT request firstHamster
     const ModifyFirstHamster = () => {
-      const hamster: Hamster = {
+      const hamster: Data = {
         name: name,
         age: Number(age),
         favFood: favFood,
@@ -112,7 +112,7 @@ const Rösta = () => {
 
   // Function för att modifiera wins, defeats och games + PUT request secondHamster
   const ModifySecondHamster = () => {
-    const hamster: Hamster = {
+    const hamster: Data = {
       name: name,
       age: Number(age),
       favFood: favFood,

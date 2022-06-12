@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Start from './components/Startsida'
+import Start from './components/Startsida/Startsida'
 import Tavla from './components/Rösta/Rösta'
 import Galleri from './components/Galleri/Galleri'
 import {NavLink, Routes, Route} from 'react-router-dom'

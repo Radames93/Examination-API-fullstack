@@ -1,0 +1,6 @@
+Länk till github - repository
+https://github.com/Radames93/Examination-API-fullstack.git
+
+Länk till heroku app
+https://examination-api-fullstack.herokuapp.com/
+
